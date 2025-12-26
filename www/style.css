@@ -1,0 +1,66 @@
+body {
+    background-color: #050505; /* Deep black for better contrast */
+    overflow: hidden; /* Simplified: hides both x and y scroll */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base style for all spans to avoid repeating code */
+.square span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient: Center is dark, edges have a tech-cyan glow */
+    background-image: radial-gradient(rgba(0,0,0,0.9) 40%, #00d2ff 100%);
+    /* Fixed 'inset' keyword and added a multi-layered glow */
+    box-shadow: 0 0 50px #00d2ff, inset 0 0 50px #00d2ff;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.square span:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate1 6s linear infinite;
+    filter: hue-rotate(0deg); /* Cyan */
+}
+
+.square span:nth-child(2) {
+    border-radius: 41% 59% 40% 60% / 65% 31% 69% 35%;
+    animation: animate2 4s linear infinite;
+    filter: hue-rotate(45deg); /* Shifts slightly toward blue-purple */
+}
+
+.square span:nth-child(3) {
+    border-radius: 73% 27% 56% 44% / 44% 61% 39% 56%;
+    animation: animate3 8s linear infinite;
+    filter: hue-rotate(90deg); /* Shifts toward deep purple */
+}
+
+/* The Animations: These make the shapes rotate and "wobble" */
+@keyframes animate1 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes animate2 {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes animate3 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
