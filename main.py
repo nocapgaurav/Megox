@@ -2,7 +2,11 @@ import eel
 import os
 import time
 
+from engine.features import *
+playAssistantSound()
+
 eel.init('www')
+
 
 # Start backend only (do NOT open chrome automatically)
 eel.start('index.html', host='localhost', port=8000, block=False, mode=None)
