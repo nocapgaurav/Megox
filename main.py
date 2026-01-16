@@ -4,6 +4,7 @@ import time
 
 from engine.features import *
 playAssistantSound()
+eel.start(...)
 
 eel.init('www')
 
