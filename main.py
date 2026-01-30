@@ -3,6 +3,7 @@ import os
 import time
 
 from engine.features import *
+from engine.command import *
 playAssistantSound()
 
 
