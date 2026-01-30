@@ -36,4 +36,14 @@ $(document).ready(function () {
         },
     })
 
+    // mic button click event
+    $("#MicBtn").click(function () { 
+
+
+        $("#oval").attr("hidden", true);
+        $("#SiriWave").attr("hidden", false);
+        
+        
+    });
+
 });
